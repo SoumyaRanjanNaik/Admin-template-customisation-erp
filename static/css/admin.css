@@ -1,0 +1,59 @@
+.buttonAss {
+    background-color: rgb(24, 44, 228);
+    border: none;
+    color: white;
+    padding: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 2px;
+    width: 100px;
+}
+
+.buttonReq {
+    background-color: rgb(231, 202, 39);
+    border: none;
+    color: white;
+    padding: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 2px;
+    width: 100px;
+}
+
+.buttonCan {
+    background-color: rgb(250, 0, 0);
+    border: none;
+    color: white;
+    padding: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 2px;
+    width: 100px;
+}
+
+.buttonRej {
+    background-color: rgb(231, 141, 39);
+    border: none;
+    color: white;
+    padding: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 2px;
+    width: 100px;
+}
+
+.buttonCom {
+    background-color: rgb(53, 211, 38);
+    border: none;
+    color: white;
+    padding: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 2px;
+    width: 100px;
+}
