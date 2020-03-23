@@ -8,65 +8,59 @@ from one.models import Request
 class RequestAdmin(admin.ModelAdmin):
     """Admin View for Request"""
 
-    user_is = None
-
-    def get_list(self, request):
+    def change_view(self, request, object_id, extra_context=None):
         if request.user.is_superuser:
-            user_is = "u"
-
-    if user_is == "u":
-        search_fields = (
-            "user_name",
-            "location",
-            "request_date",
-            "assigned_date",
-            "assigned_to",
-        )
-
-        list_display = (
-            "user_name",
-            "location",
-            "request_date",
-            "assigned_date",
-            "assigned_to",
-            "current_status",
-        )
-        list_filter = (
-            "request_date",
-            "assigned_date",
-            "status",
-        )
-        readonly_fields = ("request_date", "assigned_date")
-        date_hierarchy = "assigned_date"
-        autocomplete_fields = ("assigned_to",)
-    else:
-        search_fields = (
-            "user_name",
-            "location",
-            "request_date",
-            "assigned_date",
-        )
-
-        list_display = (
-            "user_name",
-            "location",
-            "request_date",
-            "assigned_date",
-            "current_status",
-        )
-        list_filter = (
-            "request_date",
-            "assigned_date",
-            "status",
-        )
-        readonly_fields = (
-            "request_date",
-            "assigned_date",
-            "user_name",
-            "location",
-            "assigned_to",
-        )
-        date_hierarchy = "assigned_date"
+            self.search_fields = (
+                "user_name",
+                "location",
+                "request_date",
+                "assigned_date",
+                "assigned_to",
+            )
+            self.list_display = (
+                "user_name",
+                "location",
+                "request_date",
+                "assigned_date",
+                "assigned_to",
+                "current_status",
+            )
+            self.list_filter = (
+                "request_date",
+                "assigned_date",
+                "status",
+            )
+            self.readonly_fields = ("request_date", "assigned_date")
+            self.date_hierarchy = "assigned_date"
+            self.autocomplete_fields = ("assigned_to",)
+        else:
+            self.search_fields = (
+                "user_name",
+                "location",
+                "request_date",
+                "assigned_date",
+            )
+            self.list_display = (
+                "user_name",
+                "location",
+                "request_date",
+                "assigned_date",
+                "current_status",
+            )
+            self.list_filter = (
+                "request_date",
+                "assigned_date",
+                "status",
+            )
+            self.readonly_fields = (
+                "request_date",
+                "assigned_date",
+                "user_name",
+                "location",
+                "assigned_to",
+            )
+            self.date_hierarchy = "assigned_date"
+        return super().change_view(request, object_id, extra_context=extra_context)
 
     def get_queryset(self, request):
         queryset = super().get_queryset(request)
