@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <textarea name="location" id="location" cols="30" rows="10" placeholder="Your Location"></textarea>
+    <br>
+    <input type="submit" id="" value="submit">
+</form>
+{% endblock content %}

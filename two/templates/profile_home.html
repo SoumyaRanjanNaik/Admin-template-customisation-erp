@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Hello! {{ request.user }}</h1>
+<br>
+<h2><a href="{% url 'logout' %}">logout</a></h2>
+<br>
+<h2><a href="{% url 'generate_request' %}">Generate new request</a></h2>
+<br>
+<h2><a href="{% url 'view_requests' %}">View Previous requests</a></h2>
+{% endblock content %}
